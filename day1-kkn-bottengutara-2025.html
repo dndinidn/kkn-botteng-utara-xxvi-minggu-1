@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOTTENG UTARA - KKN XXVI UNSULBAR</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #fcfdfe; scroll-behavior: smooth; overflow-x: hidden; }
+        .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.6); }
+        .gradient-text { background: linear-gradient(90deg, #e11d48, #4f46e5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-pattern { background-color: #f8fafc; background-image: radial-gradient(#e2e8f0 0.8px, transparent 0.8px); background-size: 24px 24px; }
+        .day-badge { background: linear-gradient(135deg, #e11d48 0%, #4f46e5 100%); transition: all 0.5s ease; }
+        .big-title { font-size: clamp(2.5rem, 12vw, 8rem); line-height: 1; letter-spacing: -0.04em; font-weight: 800; }
+        
+        /* SLIDER CORE */
+        .slider-container { position: relative; overflow: hidden; border-radius: 2rem; }
+        .slider-wrapper {
+            display: flex;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            overflow-x: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .slider-wrapper::-webkit-scrollbar { display: none; }
+        .slide-card { scroll-snap-align: start; flex-shrink: 0; width: 100%; aspect-ratio: 4/3; }
+        @media (min-width: 768px) { .slide-card { aspect-ratio: 16/9; } }
+        .slide-card img { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* NAVIGATION */
+        .btn-nav {
+            width: 45px; height: 45px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            border-radius: 12px;
+            color: white;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s ease;
+            pointer-events: auto;
+        }
+        .btn-nav:hover { background: white; color: #e11d48; }
+
+        .card-hover { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body id="top" class="text-slate-800 antialiased bg-pattern">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center p-6">
+        <div class="glass px-6 py-3 rounded-full shadow-lg flex items-center gap-4">
+            <img src="logo.png" alt="Logo" class="h-8 w-auto">
+            <div class="h-4 w-[1.5px] bg-slate-200"></div>
+            <span class="text-[9px] font-black text-slate-500 uppercase tracking-[0.2em]">KKN XXVI UNSULBAR</span>
+        </div>
+    </nav>
+
+    <header class="pt-48 pb-16 px-6 text-center">
+        <div class="max-w-6xl mx-auto" data-aos="fade-up">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-slate-100 border border-slate-200 mb-6">
+                <p class="text-slate-600 font-extrabold text-[10px] md:text-xs uppercase tracking-[0.4em]">KKN Reguler XXVI Universitas Sulawesi Barat</p>
+            </div>
+            
+            <p class="text-rose-600 font-bold text-xs uppercase tracking-[0.5em] mb-4">OUR DAILY JOURNAL</p>
+            <h1 class="big-title text-slate-900 mb-8">BOTTENG<br><span class="gradient-text">UTARA</span></h1>
+            
+            <div class="max-w-2xl mx-auto mt-8 px-4">
+                <p class="text-lg md:text-xl text-slate-500 font-medium leading-relaxed italic">
+                    "Dari Desa Untuk Negeri, Menyemai Kekuatan Lokal Menuju <span class="text-indigo-600 font-bold not-italic">Smart Village</span>"
+                </p>
+                <div class="w-20 h-1 bg-gradient-to-r from-rose-500 to-indigo-600 mx-auto mt-6 rounded-full"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 pb-40">
+        <div class="mb-24 text-center" data-aos="fade-up">
+            <span class="px-6 py-2 rounded-full bg-slate-900 text-white text-xs font-bold uppercase tracking-[0.3em]">Minggu Pertama</span>
+            <h2 class="text-3xl font-bold mt-4 text-slate-800">"Pengenalan Lingkungan"</h2>
+            <p class="text-slate-400 italic text-sm mt-2">Adaptasi dan Observasi Potensi Desa</p>
+        </div>
+
+        <div class="space-y-40">
+            
+            <section class="relative" data-aos="fade-up">
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <div class="md:w-1/4 sticky top-32">
+                        <div class="day-badge inline-block px-6 py-2 rounded-2xl text-white mb-4 shadow-lg shadow-rose-200">
+                            <span class="text-xs font-black uppercase tracking-widest">Hari 01</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight leading-tight">Jejak Awal di Botteng Utara</h3>
+                        <p class="text-slate-400 text-[10px] uppercase tracking-widest mt-3 font-bold">Selasa, 16 Desember 2025</p>
+                    </div>
+                    
+                    <div class="md:w-3/4 w-full">
+                        <div class="relative group shadow-2xl shadow-slate-200 rounded-[2rem] overflow-hidden mb-8 card-hover">
+                            <div class="slider-wrapper" id="slider-1">
+                                <div class="slide-card"><img src="d1.jpeg" alt="Interaksi Awal"></div>
+                                <div class="slide-card"><img src="2.jpeg" alt="Interaksi Awal"></div>
+                                <div class="slide-card"><img src="1.jpeg" alt="Interaksi Awal"></div>
+                                <div class="slide-card"><img src="3.jpeg" alt="Interaksi Awal"></div>
+                                <div class="slide-card"><img src="4.jpeg" alt="Bermain Voli"></div>
+                                <div class="slide-card"><img src="5.jpeg" alt="Eksplorasi Kebun"></div>
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                                <button onclick="document.getElementById('slider-1').scrollBy({left: -500, behavior: 'smooth'})" class="btn-nav shadow-xl pointer-events-auto">←</button>
+                                <button onclick="document.getElementById('slider-1').scrollBy({left: 500, behavior: 'smooth'})" class="btn-nav shadow-xl pointer-events-auto">→</button>
+                            </div>
+                        </div>
+
+                        <div class="glass p-8 md:p-10 rounded-[2rem] space-y-6">
+                            <div class="flex items-center gap-3">
+                                <span class="h-px w-8 bg-rose-500"></span>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed text-justify"> <strong>Botteng Utara, 16 Desember 2025</strong> – Langkah pertama tim KKN Reguler XXVI Universitas Sulawesi Barat di Desa Botteng Utara dimulai dengan penuh kehangatan. Perjalanan pengabdian kami resmi dimulai tepat pukul 08.00 WITA, diawali dengan menghadiri acara penerimaan mahasiswa KKN di Kantor Camat Simboro dan Kepulauan. Pertemuan formal ini menjadi gerbang resmi yang menandai dimulainya dedikasi kami untuk masyarakat setempat. </p>
+                            <p class="text-slate-600 leading-relaxed text-justify"> Usai prosesi penerimaan, kami bergegas menuju lokasi penempatan di Dusun Popanga. Di sini, agenda hari pertama difokuskan pada upaya pengenalan  kehidupan masyarakat melalui interaksi langsung yang natural. Kehadiran kami disambut dengan antusiasme yang luar biasa; keramahtamahan warga terlihat jelas saat berbagai lapisan usia—mulai dari anak-anak hingga dewasa—menyambut kami dengan tangan terbuka. </p>
+                            <p class="text-slate-600 leading-relaxed text-justify"> Tak butuh waktu lama bagi kami untuk membaur. Sebuah ajakan bermain bola voli bersama menjadi jembatan komunikasi yang cair. Di lapangan sederhana itu, tawa dan semangat kompetisi sehat menjadi penanda awal diterimanya kami sebagai bagian dari keluarga besar dusun ini. Agenda dilanjutkan dengan menyusuri rute hijau yang diapit rimbunnya perkebunan durian, rambutan, hingga alpukat—sebuah potret nyata kekayaan alam Desa Botteng Utara yang melimpah. </p>
+                            <p class="text-slate-600 leading-relaxed text-justify"> Sepanjang perjalanan menuju area yang disebut warga sebagai <span class="text-indigo-600 font-bold">"Villa"</span>, bincang-bincang santai mengalir tanpa sekat. Kami diajak mengenal titik-titik lokasi di sekitar posko yang menjadi pusat aktivitas warga. Pengenalan wilayah secara langsung ini memberikan gambaran nyata mengenai kondisi geografis dan potensi desa yang asri. Hari pertama ini ditutup dengan pemahaman kuat bahwa Botteng Utara memiliki daya tarik istimewa, di mana keindahan alam dan kehangatan sosial masyarakatnya berjalan beriringan. </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="relative" data-aos="fade-up">
+                <div class="flex flex-col md:flex-row-reverse gap-8 items-start">
+                    <div class="md:w-1/4 sticky top-32 md:text-right">
+                        <div class="day-badge inline-block px-6 py-2 rounded-2xl text-white mb-4 shadow-lg shadow-indigo-200">
+                            <span class="text-xs font-black uppercase tracking-widest">Hari 02</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight leading-tight uppercase">Observasi 1</h3>
+                        <p class="text-slate-400 text-[10px] uppercase tracking-widest mt-3 font-bold">Rabu, 17 Desember 2025</p>
+                    </div>
+                    
+                    <div class="md:w-3/4 w-full">
+                        <div class="relative group shadow-2xl shadow-slate-200 rounded-[2rem] overflow-hidden mb-8 card-hover">
+                            <div class="slider-wrapper" id="slider-2">
+                                <div class="slide-card"><img src="9.jpeg" alt="Penyambutan Resmi"></div>
+                                <div class="slide-card"><img src="6.jpeg" alt="Observasi Dusun"></div>
+                                <div class="slide-card"><img src="7.jpeg" alt="Diskusi Aparat Desa"></div>
+                                <div class="slide-card"><img src="8.jpeg" alt="Penyambutan Resmi"></div>
+                                <div class="slide-card"><img src="10.jpeg" alt="Observasi Dusun"></div>
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                                <button onclick="document.getElementById('slider-2').scrollBy({left: -500, behavior: 'smooth'})" class="btn-nav shadow-xl pointer-events-auto">←</button>
+                                <button onclick="document.getElementById('slider-2').scrollBy({left: 500, behavior: 'smooth'})" class="btn-nav shadow-xl pointer-events-auto">→</button>
+                            </div>
+                        </div>
+
+                        <div class="glass p-8 md:p-10 rounded-[2rem] space-y-6 border-r-4 border-indigo-500">
+                            <div class="flex items-center gap-3 justify-end">
+                                <span class="h-px w-8 bg-indigo-500"></span>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed text-justify">
+                                <strong class="text-slate-900">Botteng Utara, 17 Desember 2025</strong> – Melanjutkan legalitas penerimaan dari tingkat kecamatan, hari kedua diisi dengan silaturahmi formal bersama Pemerintah Desa Botteng Utara. Pertemuan ini menjadi ruang koordinasi untuk memperkenalkan tim secara mendalam kepada jajaran aparat desa.
+                            </p>
+                            <p class="text-slate-600 leading-relaxed text-justify">
+                                Melalui bincang santai, kami mendalami karakteristik Dusun Popanga, Sendana, Pasada, hingga Pasada Barat. Informasi ini kemudian kami tindak lanjuti dengan melakukan peninjauan langsung di medan untuk melihat potensi rill dan kondisi infrastruktur di tiap wilayah tersebut.
+                            </p>
+                            <p class="text-slate-700 font-medium italic leading-relaxed">
+                                Penyisiran di empat dusun pertama ini merupakan langkah awal dari rangkaian pengenalan wilayah yang akan kami lakukan secara bertahap di seluruh penjuru Desa Botteng Utara.
+                            </p>
+                            <p class="text-slate-600 leading-relaxed text-justify font-medium">
+                                Agenda hari ini menjadi fondasi penting dalam mengumpulkan gambaran nyata di lapangan. Observasi akan terus berlanjut ke dusun-dusun berikutnya guna memastikan draf program kerja yang disusun nantinya dapat menyentuh kebutuhan rill masyarakat desa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="relative" data-aos="fade-up">
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <div class="md:w-1/4 sticky top-32">
+                        <div class="day-badge inline-block px-6 py-2 rounded-2xl text-white mb-4 shadow-lg shadow-rose-200">
+                            <span class="text-xs font-black uppercase tracking-widest">Hari 03</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight leading-tight uppercase">Observasi 2</h3>
+                        <p class="text-slate-400 text-[10px] uppercase tracking-widest mt-3 font-bold">Kamis, 18 Desember 2025</p>
+                    </div>
+                    
+                    <div class="md:w-3/4 w-full">
+                        <div class="relative group shadow-2xl shadow-slate-200 rounded-[2rem] overflow-hidden mb-8 card-hover">
+                            <div class="slider-wrapper" id="slider-3">
+                                <div class="slide-card"><img src="f1.jpeg" alt="Perjalanan Gunung"></div>
+                                <div class="slide-card"><img src="f2.jpg" alt="Tiba di Pakkaroang"></div>
+                                <div class="slide-card relative">
+                                    <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+                                        <source src="v1.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="absolute top-4 left-4 bg-black/50 backdrop-blur-md text-white text-[8px] px-2 py-1 rounded-full uppercase font-bold tracking-widest">Video Documentation</div>
+                                </div>
+                                <div class="slide-card relative">
+                                    <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+                                        <source src="v2.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="absolute top-4 left-4 bg-black/50 backdrop-blur-md text-white text-[8px] px-2 py-1 rounded-full uppercase font-bold tracking-widest">Video Documentation</div>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                                <button onclick="document.getElementById('slider-3').scrollBy({left: -500, behavior: 'smooth'})" class="btn-nav shadow-xl pointer-events-auto">←</button>
+                                <button onclick="document.getElementById('slider-3').scrollBy({left: 500, behavior: 'smooth'})" class="btn-nav shadow-xl pointer-events-auto">→</button>
+                            </div>
+                        </div>
+
+                        <div class="glass p-8 md:p-10 rounded-[2rem] space-y-6">
+                            <div class="flex items-center gap-3">
+                                <span class="h-px w-8 bg-rose-500"></span>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed text-justify">
+                                <strong class="text-slate-900">Botteng Utara, 18 Desember 2025</strong> – Rangkaian peninjauan wilayah berlanjut ke tahap yang lebih menantang. Fokus utama kami hari ini adalah menjalin silaturahmi formal di lima dusun: <b>Adi-Adi, Salurumbia, Salukalo, Tande-Tande, dan Pakkaroang.</b>
+                            </p>
+                            <p class="text-slate-600 leading-relaxed text-justify">
+                                Puncak perjalanan hari ini adalah kunjungan ke Dusun Pakkaroang yang memiliki tantangan geografis unik. Akses yang terbatas memaksa tim untuk melakukan <em>trekking</em> menyusuri gunung selama 30 menit. Namun, medan yang sulit seolah terlupakan berkat canda tawa dan semangat kebersamaan tim di sepanjang jalur pendakian.
+                            </p>
+                            <p class="text-slate-700 italic leading-relaxed">
+                                Segala rasa lelah terbayar tuntas oleh sambutan luar biasa hangat dari masyarakat Pakkaroang, terutama antusiasme anak-anak yang menyambut kehadiran kami dengan binar harapan.
+                            </p>
+                            <p class="text-slate-600 leading-relaxed text-justify font-medium">
+                                Pengalaman hari ini memberikan catatan mendalam bagi kami bahwa kontribusi terbaik lahir dari kesediaan untuk melangkah lebih jauh. Pakkaroang resmi menjadi bagian paling berkesan dalam memori kolektif kami di Desa Botteng Utara.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="relative" data-aos="fade-up">
+                <div class="flex flex-col md:flex-row-reverse gap-8 items-start">
+                    <div class="md:w-1/4 sticky top-32 md:text-right">
+                        <div class="day-badge inline-block px-6 py-2 rounded-2xl text-white mb-4 shadow-lg shadow-indigo-200">
+                            <span class="text-xs font-black uppercase tracking-widest">Hari 04</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight leading-tight uppercase">Observasi 3</h3>
+                        <p class="text-slate-400 text-[10px] uppercase tracking-widest mt-3 font-bold">Jumat, 19 Desember 2025</p>
+                    </div>
+                    
+                    <div class="md:w-3/4 w-full">
+                        <div class="relative group shadow-2xl shadow-slate-200 rounded-[2rem] overflow-hidden mb-8 card-hover">
+                            <div class="slider-wrapper" id="slider-4">
+                                <div class="slide-card"><img src="42.png" alt=""></div>
+                                <div class="slide-card"><img src="43.png" alt=""></div>
+                                <div class="slide-card"><img src="4.1.png" alt=""></div>
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                                <button onclick="document.getElementById('slider-4').scrollBy({left: -500, behavior: 'smooth'})" class="btn-nav shadow-xl pointer-events-auto">←</button>
+                                <button onclick="document.getElementById('slider-4').scrollBy({left: 500, behavior: 'smooth'})" class="btn-nav shadow-xl pointer-events-auto">→</button>
+                            </div>
+                        </div>
+
+                        <div class="glass p-8 md:p-10 rounded-[2rem] space-y-6 border-r-4 border-indigo-500">
+                            <div class="flex items-center gap-3 justify-end">
+                                <span class="h-px w-8 bg-indigo-500"></span>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed text-justify">
+                                <strong class="text-slate-900">Botteng Utara, 19 Desember 2025</strong> – Tim KKN Reguler XXVI Universitas Sulawesi Barat resmi menuntaskan rangkaian agenda pengenalan wilayah. <b>Dusun Punaga dan Dusun Oniang</b> menjadi dua titik terakhir yang kami kunjungi dalam menutup fase observasi lapangan secara menyeluruh.
+                            </p>
+                            <p class="text-slate-600 leading-relaxed text-justify">
+                                Sebagaimana langkah sebelumnya, kami melakukan silaturahmi ke kediaman para Kepala Dusun. Perjalanan hari ini berlangsung seru, dipenuhi interaksi spontan dengan warga yang memberikan gambaran tambahan mengenai keramahtamahan khas Desa Botteng Utara.
+                            </p>
+                            <p class="text-slate-700 font-medium italic leading-relaxed">
+                                Tuntasnya kunjungan ke seluruh dusun di desa ini menjadi modal aset data yang siap kami olah menjadi rancangan program kerja yang nyata dan aplikatif.
+                            </p>
+                            <p class="text-slate-600 leading-relaxed text-justify font-medium">
+                                Dengan berakhirnya fase orientasi medan, tim kini beralih fokus pada tahap perencanaan strategis untuk memastikan pengabdian selama 40 hari ke depan memberikan dampak positif bagi seluruh masyarakat desa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+      <section class="relative" data-aos="fade-up">
+    <div class="flex flex-col md:flex-row gap-8 items-start">
+        <div class="md:w-1/4 sticky top-32">
+            <div class="day-badge inline-block px-6 py-2 rounded-2xl text-white mb-4 shadow-lg shadow-rose-200">
+                <span class="text-xs font-black uppercase tracking-widest">Hari 05</span>
+            </div>
+            <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight leading-tight uppercase">Edukasi & Eksplorasi</h3>
+            <p class="text-slate-400 text-[10px] uppercase tracking-widest mt-3 font-bold">Sabtu, 20 Desember 2025</p>
+        </div>
+        
+        <div class="md:w-3/4 w-full">
+            <div class="relative group shadow-2xl shadow-slate-200 rounded-[2rem] overflow-hidden mb-8 card-hover">
+                <div class="slider-wrapper" id="slider-5">
+                    <div class="slide-card"><img src="d5-2.jpg" alt="Penyuluhan Kesehatan"></div>
+                    <div class="slide-card"><img src="d5-1.jpg" alt="Penyuluhan Kesehatan"></div>
+                </div>
+                <div class="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <button onclick="document.getElementById('slider-5').scrollBy({left: -500, behavior: 'smooth'})" class="btn-nav">←</button>
+                    <button onclick="document.getElementById('slider-5').scrollBy({left: 500, behavior: 'smooth'})" class="btn-nav">→</button>
+                </div>
+            </div>
+
+            <div class="glass p-8 md:p-10 rounded-[2rem] space-y-6">
+                <p class="text-slate-600 leading-relaxed text-justify">
+                    <strong class="text-slate-900">Botteng Utara, 20 Desember 2025</strong> – Setelah menuntaskan observasi, kami menerima penyuluhan berharga dari <strong>Ibu Staf BKKBN Mamuju</strong> dan <strong>Bidan Puskesmas Botteng</strong> terkait stunting, pernikahan dini, serta kesehatan ibu dan anak. Sore harinya, kami berbaur dengan warga sambil mengeksplorasi destinasi wisata lokal yang indah. Hari ditutup dengan rapat mengenai rancangan program kerja.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+     <section class="relative" data-aos="fade-up">
+    <div class="flex flex-col md:flex-row-reverse gap-8 items-start">
+        <div class="md:w-1/4 sticky top-32 md:text-right">
+            <div class="day-badge inline-block px-6 py-2 rounded-2xl text-white mb-4 shadow-lg shadow-indigo-200">
+                <span class="text-xs font-black uppercase tracking-widest">Hari 06</span>
+            </div>
+            <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight leading-tight uppercase">Gotong Royong & Memori</h3>
+            <p class="text-slate-400 text-[10px] uppercase tracking-widest mt-3 font-bold">Minggu, 21 Desember 2025</p>
+        </div>
+        
+        <div class="md:w-3/4 w-full">
+            <div class="relative group shadow-2xl shadow-slate-200 rounded-[2rem] overflow-hidden mb-8 card-hover">
+                <div class="slider-wrapper" id="slider-6">
+                    <div class="slide-card"><img src="61.jpeg" alt="Kerja Bakti"></div>
+                    <div class="slide-card"><img src="62.jpeg" alt="Kerja Bakti"></div>
+                    <div class="slide-card"><img src="63.jpeg" alt="Kerja Bakti"></div>
+                    <div class="slide-card"><img src="64.jpeg" alt="Kerja Bakti"></div>
+                </div>
+                <div class="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                    <button onclick="document.getElementById('slider-6').scrollBy({left: -500, behavior: 'smooth'})" class="btn-nav shadow-xl pointer-events-auto">←</button>
+                    <button onclick="document.getElementById('slider-6').scrollBy({left: 500, behavior: 'smooth'})" class="btn-nav shadow-xl pointer-events-auto">→</button>
+                </div>
+            </div>
+
+            <div class="glass p-8 md:p-10 rounded-[2rem] space-y-6 border-r-4 border-sky-500 card-hover">
+                <div class="flex items-center gap-3 justify-end">
+                    <span class="h-px w-8 bg-sky-500"></span>
+                </div>
+                <p class="text-slate-600 leading-relaxed text-justify">
+                    <strong class="text-slate-900">Botteng Utara, 21 Desember 2025</strong> – Mengawali hari dengan aksi sosial, tim melaksanakan kerja bakti di area Kantor Desa dan Masjid. Setelahnya, kami membaur dengan warga untuk mengolah kudapan tradisional ubi kayu, <em>doko-doko</em> dan <em>nyo'nyor</em>, yang diakhiri dengan makan bersama dalam suasana penuh tawa.
+                </p>
+                <p class="text-slate-600 leading-relaxed text-justify">
+                    Suasana kekeluargaan semakin kental saat kami menikmati sajian durian lokal segar bersama Bapak dan Ibu Kepala Desa di dapur posko. Momen santai di kediaman beliau ini menjadi selingan berharga yang mempererat kedekatan emosional sebelum kami memasuki sesi diskusi serius di malam hari.
+                </p>
+                <p class="text-slate-600 leading-relaxed text-justify">
+                    Meskipun diselingi momen penuh tawa, rapat final di malam hari tetap berjalan intensif guna mematangkan draf seminar program kerja yang akan segera dipaparkan secara resmi.
+                </p>
+                <p class="text-slate-600 leading-relaxed text-justify font-medium">
+                    Hari keenam ditutup dengan kesiapan teknis yang matang, memastikan bahwa setiap rencana pengabdian telah terkoordinasi dengan baik bersama aparat desa dan tokoh pemuda Desa Botteng Utara.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-100 pt-24 pb-12 px-6">
+        <div class="max-w-6xl mx-auto text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                <div data-aos="fade-up">
+                    <img src="logo.png" alt="Logo Footer" class="h-16 w-auto mb-6 mx-auto md:mx-0 opacity-90 transition-all hover:scale-105">
+                    <h3 class="text-2xl font-black text-slate-900 mb-2 tracking-tighter uppercase">Botteng Utara</h3>
+                    <p class="text-rose-600 font-bold uppercase tracking-[0.3em] text-[10px] mb-4">KKN Reguler XXVI Unsulbar</p>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
+                        "Dari Desa Untuk Negeri, Menyemai Kekuatan Lokal Menuju Smart Village"
+                    </p>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h5 class="text-[11px] font-black text-slate-400 uppercase tracking-widest mb-6">Ikuti Kami</h5>
+                    <div class="flex flex-col gap-4 items-center md:items-start">
+                        <a href="https://www.instagram.com/kkn_desa_bottengutara" target="_blank" class="flex items-center gap-3 group">
+                            <div class="p-2 bg-rose-50 text-rose-600 rounded-lg group-hover:bg-rose-600 group-hover:text-white transition-all shadow-sm">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </div>
+                            <span class="text-sm font-bold text-slate-600 group-hover:text-rose-600 transition-colors">@kkn26_bottengutara</span>
+                        </a>
+                        <a href="https://tiktok.com/@kkn_desabottengutara2025" target="_blank" class="flex items-center gap-3 group">
+                            <div class="p-2 bg-slate-50 text-slate-800 rounded-lg group-hover:bg-black group-hover:text-white transition-all shadow-sm">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.03 1.07-1.13 1.81-.14.86.23 1.84.94 2.34.72.54 1.71.59 2.5.21.64-.28 1.12-.87 1.25-1.54.04-2.11.02-4.23.03-6.35.01-4.14-.01-8.28.01-12.42z"/></svg>
+                            </div>
+                            <span class="text-sm font-bold text-slate-600 group-hover:text-black transition-colors">KKN Botteng Utara</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h5 class="text-[11px] font-black text-slate-400 uppercase tracking-widest mb-6">Lokasi & Navigasi</h5>
+                    <p class="text-sm font-bold text-slate-600 leading-relaxed italic mb-6">Kec. Simboro, Kab. Mamuju,<br>Sulawesi Barat.</p>
+                    <a href="#top" class="inline-flex items-center gap-2 text-[10px] font-black text-rose-600 uppercase tracking-widest hover:gap-4 transition-all">Kembali Ke Atas <span>&uarr;</span></a>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-300 text-[9px] font-black uppercase tracking-[0.5em]">&copy; 2025 BOTTENG UTARA - KKN XXVI UNSULBAR</p>
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Portal Aktif</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 1000, easing: 'ease-out-cubic' });
+    </script>
+</body>
+</html>
